@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "ZWfoYVYDujTDa7p0Lh5exgihaUlanj7kOtsRhn4xTf0=",
+  "Source": "id_validator_api",
+  "BasePath": "_content/id_validator_api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
