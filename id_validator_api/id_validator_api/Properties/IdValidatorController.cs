@@ -11,18 +11,17 @@ namespace id_validator_api.Properties
         [HttpGet("{id}")]
         public ActionResult GetId(string id)
         {
-            //string msg = "test";
             bool isId = true;
             bool notId = false;
 
             try
             {
-                // check length
+                // check ID length
                 if (id.Length != 11) return Ok(notId);
 
                 int century = 0;
 
-                // check century
+                // check birth year
                 switch (id[0])
                 {
                     case '1':
@@ -50,18 +49,17 @@ namespace id_validator_api.Properties
                 }
 
 
-                // check if birthday is a valid date
-                // get a date from IK
-               string s = id.Substring(5, 2) + "." +
+                // get a date from ID and check if birthday is a valid date
+                string s = id.Substring(5, 2) + "." +
                     id.Substring(3, 2) + "." +
                     Convert.ToString(century + Convert.ToInt32(id.Substring(1, 2)));
 
-                //error if parse fails, catch gets false. TryParse() does not exist in .NET 1.1
+                //error if parse fails
 
                 DateTime d = DateTime.Parse(s);
                 
 
-                // calculate the checksum
+                // calculate the controlsum
                 int n = Int16.Parse(id[0].ToString()) * 1
                       + Int16.Parse(id[1].ToString()) * 2
                       + Int16.Parse(id[2].ToString()) * 3
@@ -75,10 +73,10 @@ namespace id_validator_api.Properties
 
                 int c = n % 11;
 
-                // special case recalculate the checksum
+                // special case controlsum
                 if (c == 10)
                 {
-                    // calculate the checksum
+                    // calculate the controlsum
                     n = Int16.Parse(id[0].ToString()) * 3
                       + Int16.Parse(id[1].ToString()) * 4
                       + Int16.Parse(id[2].ToString()) * 5
