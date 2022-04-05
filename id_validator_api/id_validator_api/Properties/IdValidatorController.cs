@@ -19,7 +19,7 @@ namespace id_validator_api.Properties
                 // check ID length
                 if (id.Length != 11) return Ok(notId);
 
-                int century = 0;
+                int year = 0;
 
                 // check birth year
                 switch (id[0])
@@ -27,19 +27,19 @@ namespace id_validator_api.Properties
                     case '1':
                     case '2':
                         {
-                            century = 1800;
+                            year= 1800;
                             break;
                         }
                     case '3':
                     case '4':
                         {
-                            century = 1900;
+                            year = 1900;
                             break;
                         }
                     case '5':
                     case '6':
                         {
-                            century = 2000;
+                            year = 2000;
                             break;
                         }
                     default:
@@ -50,17 +50,17 @@ namespace id_validator_api.Properties
 
 
                 // get a date from ID and check if birthday is a valid date
-                string s = id.Substring(5, 2) + "." +
+                string birthDate = id.Substring(5, 2) + "." +
                     id.Substring(3, 2) + "." +
-                    Convert.ToString(century + Convert.ToInt32(id.Substring(1, 2)));
+                    Convert.ToString(year + Convert.ToInt32(id.Substring(1, 2)));
 
                 //error if parse fails
 
-                DateTime d = DateTime.Parse(s);
+                DateTime d = DateTime.Parse(birthDate);
                 
 
                 // calculate the controlsum
-                int n = Int16.Parse(id[0].ToString()) * 1
+                int controlSum= Int16.Parse(id[0].ToString()) * 1
                       + Int16.Parse(id[1].ToString()) * 2
                       + Int16.Parse(id[2].ToString()) * 3
                       + Int16.Parse(id[3].ToString()) * 4
@@ -71,13 +71,13 @@ namespace id_validator_api.Properties
                       + Int16.Parse(id[8].ToString()) * 9
                       + Int16.Parse(id[9].ToString()) * 1;
 
-                int c = n % 11;
+                int sum = controlSum % 11;
 
                 // special case controlsum
-                if (c == 10)
+                if (sum == 10)
                 {
                     // calculate the controlsum
-                    n = Int16.Parse(id[0].ToString()) * 3
+                    controlSum = Int16.Parse(id[0].ToString()) * 3
                       + Int16.Parse(id[1].ToString()) * 4
                       + Int16.Parse(id[2].ToString()) * 5
                       + Int16.Parse(id[3].ToString()) * 6
@@ -88,10 +88,10 @@ namespace id_validator_api.Properties
                       + Int16.Parse(id[8].ToString()) * 2
                       + Int16.Parse(id[9].ToString()) * 3;
 
-                    c = n % 11;
-                    c = c % 10;
+                    sum = controlSum % 11;
+                    sum = sum % 10;
                 }
-                return Ok(c == Int16.Parse(id[10].ToString()));
+                return Ok(sum == Int16.Parse(id[10].ToString()));
 
             }
 
