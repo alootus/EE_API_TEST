@@ -12,33 +12,49 @@ const Header = () => {
   //const dataContext = useContext(DataContext);
   // const { validId, getId } = dataContext;
   //const { id, setId } = useState();
-  const [personalId, setPersonalId] = useState([]);
+  const [personalId, setPersonalId] = useState(null);
   const [show, setShow] = useState(false);
-  const [input, setInput] = useState();
+  const [input, setInput] = useState("");
   const [sendId, setSendId] = useState();
+  const [message, setMessage] = useState("");
+  const [style, setStyle] = useState("");
 
   useEffect(() => {
     fetch(`/api/IdValidator/${sendId}`)
       .then((result) => result.json())
       .then((personalId) => setPersonalId(personalId));
-  }, [sendId]);
+    if (personalId === true) {
+      setMessage(`IK ${sendId} on valideeritud`);
+      setStyle(`success`);
+    }
+    if (personalId === false) {
+      setMessage(`IK ${sendId} ei valideeru `);
+      setStyle(`danger`);
+    }
+  }, [sendId, personalId]);
 
   console.log(personalId);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (input.length < 11) {
-      console.log("to short");
-    }
-    if (input.length > 11) {
-      console.log("to short or too long");
-    }
     if (input.length === 11) {
-      const toNumber = Number(input);
-      if (Number.isInteger(toNumber) === true) {
+      const toNumber = parseInt(input);
+      if (Number.isInteger(toNumber)) {
+        console.log(toNumber);
         setSendId(() => toNumber);
       }
+      setMessage(`IK koosneb numbritest`);
+      setStyle(`danger`);
+    }
+
+    if (input.length < 11) {
+      setMessage(`IK pikkus on 11 numbrit`);
+      setStyle(`danger`);
+    }
+    if (input.length > 11) {
+      setMessage(`IK pikkus on 11 numbrit`);
+      setStyle(`danger`);
     }
   };
 
@@ -53,15 +69,11 @@ const Header = () => {
         <Alert
           className="mt-3"
           show={show}
-          variant={personalId === true ? "success" : "danger"}
+          variant={style}
           onClose={() => setShow(false)}
           dismissible
         >
-          <p className="pt-2">
-            {personalId === true
-              ? `Sinu sisestatud IK ${input} on korrektne`
-              : `Sinu sisestatud IK ${input} ei ole korrektne`}
-          </p>
+          <p className="pt-2">{message}</p>
         </Alert>
 
         <Form className="mt-3" onSubmit={handleSubmit}>
@@ -69,7 +81,10 @@ const Header = () => {
             <FormControl
               placeholder="Sisesta isikukood"
               name="id"
-              onChange={(e) => setInput(e.target.value)}
+              onChange={(e) => {
+                setInput(e.target.value);
+                setShow(false);
+              }}
             />
             <Button
               type="submit"
