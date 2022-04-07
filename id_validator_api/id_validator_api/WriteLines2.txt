@@ -1,0 +1,4 @@
+37709296019 on valideeritud
+37709296000 kontrollsumma ei klapi
+48101100012 on valideeritud
+48101100000 kontrollsumma ei klapi

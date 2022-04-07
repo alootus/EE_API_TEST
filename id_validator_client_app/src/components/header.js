@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 //import DataContext from "../context/data/dataContext";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
@@ -6,7 +6,6 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import FormControl from "react-bootstrap/FormControl";
 import Button from "react-bootstrap/Button";
-import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
 const Header = () => {
   //const dataContext = useContext(DataContext);
@@ -19,10 +18,19 @@ const Header = () => {
   const [message, setMessage] = useState("");
   const [style, setStyle] = useState("");
 
+  async function postData(url) {
+    // Default options are marked with *
+    const response = await fetch(url, {
+      method: "POST", //post
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(personalId),
+    });
+    return response.json();
+  }
+
   useEffect(() => {
-    fetch(`/api/IdValidator/${sendId}`)
-      .then((result) => result.json())
-      .then((personalId) => setPersonalId(personalId));
     if (personalId === true) {
       setMessage(`IK ${sendId} on valideeritud`);
       setStyle(`success`);
@@ -41,8 +49,10 @@ const Header = () => {
     if (input.length === 11) {
       const toNumber = parseInt(input);
       if (Number.isInteger(toNumber)) {
-        console.log(toNumber);
-        setSendId(() => toNumber);
+        postData(`/api/IdValidator/${toNumber}`).then((personalId) => {
+          setPersonalId(personalId);
+          setSendId(toNumber);
+        });
       }
       setMessage(`IK koosneb numbritest`);
       setStyle(`danger`);
