@@ -1,11 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.IO;
-using Newtonsoft.Json;
+
 
 namespace id_validator_api.Properties
 {
@@ -19,11 +18,12 @@ namespace id_validator_api.Properties
 
         public ActionResult GetList()
         {
-            string[] lines = System.IO.File.ReadAllLines(@"WriteLines2.txt");
+            string[] lines = System.IO.File.ReadAllLines(@"log.txt");
 
             Console.WriteLine(lines);
 
             return Ok(lines);
+
 
         }
 
@@ -36,14 +36,6 @@ namespace id_validator_api.Properties
 
             try
             {
-                // check ID length
-                if (id.Length != 11) {
-
-                    msg = "liiga lühike";
-
-                    return BadRequest(false);
-                    
-                }
 
                 //msg = "Soo tunnus ei vasta aasta arvule";
                 // check birth year
@@ -121,16 +113,16 @@ namespace id_validator_api.Properties
                 //change error message
                 if (sum != Int16.Parse(id[10].ToString()))
                 {
-                    msg = "kontrollsumma ei klapi";
+                    msg = id + " || kontrollsumma ei klapi ||  aeg: " + DateTime.Now;
                 }
                 else
                 {
-                    msg = "on valideeritud"; 
+                    msg = id + " || on valideeritud ||  aeg: " + DateTime.Now; 
                 }
 
                 //save result into file
-                using StreamWriter file = new("WriteLines2.txt", append: true);
-                file.WriteLineAsync(id + " " + msg);
+                using StreamWriter file = new("log.txt", append: true);
+                file.WriteLineAsync(msg);
 
                 //return true value
                 return Ok(sum == Int16.Parse(id[10].ToString()));
@@ -142,17 +134,6 @@ namespace id_validator_api.Properties
                 //return falce value
                 return BadRequest(false);
             }
-            finally
-            {
-                
-
-
-
-                Console.WriteLine( "test");
-              
-               
-            }
-
         }
 
     }

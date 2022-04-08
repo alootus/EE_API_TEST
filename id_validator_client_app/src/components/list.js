@@ -1,10 +1,9 @@
-import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import ListGroup from "react-bootstrap/ListGroup";
 
-const List = ({ list, i }) => {
+const List = ({ list }) => {
   return (
     <Container className="border border-primary p-5">
       <Row>
@@ -14,10 +13,10 @@ const List = ({ list, i }) => {
               return (
                 <ListGroup.Item
                   key={i}
-                  className="bg-secondary text-white border border-white"
+                  className="bg-secondary border border-white"
                 >
                   <Row>
-                    <Col className="text-center">{item}</Col>
+                    <Col className="text-center text-white">{item}</Col>
                   </Row>
                 </ListGroup.Item>
               );

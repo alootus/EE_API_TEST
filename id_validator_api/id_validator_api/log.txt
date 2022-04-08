@@ -1,0 +1,5 @@
+﻿37709296019 || on valideeritud || aeg: 08.04.2022 20:10:31
+37709290000 || kontrollsumma ei klapi ||  aeg: 08.04.2022 20:13:40
+48101100012 || on valideeritud ||  aeg: 08.04.2022 20:25:11
+48101100000 || kontrollsumma ei klapi ||  aeg: 08.04.2022 20:25:24
+37709290015 || on valideeritud ||  aeg: 08.04.2022 20:27:57
