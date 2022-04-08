@@ -16,11 +16,11 @@ namespace id_validator_api.Properties
 
         [HttpGet]
 
+        //Get logdata endpoint
         public ActionResult GetList()
         {
+            //read logdata from logfile and send to user
             string[] lines = System.IO.File.ReadAllLines(@"log.txt");
-
-            Console.WriteLine(lines);
 
             return Ok(lines);
 
@@ -29,16 +29,18 @@ namespace id_validator_api.Properties
 
 
         [HttpPost("{id}")]
+
+        //Post ID validation endpoint
         public ActionResult  ValidateId(string id)
         {
-            //bool notId = false;
+            //validation message
             string msg = "";
+            using StreamWriter file = new("log.txt", append: true); 
+
 
             try
             {
-
-                //msg = "Soo tunnus ei vasta aasta arvule";
-                // check birth year
+                // check gender no and build birth year value
                 int year = 0;
                 switch (id[0])
                 {
@@ -63,6 +65,9 @@ namespace id_validator_api.Properties
                         }
                     default:
                         {
+                            //save false result into file
+                            msg = id + " || soo tunnus on vale ||  aeg: " + DateTime.Now;
+                            file.WriteLineAsync(msg);
                             //return falce value
                             return BadRequest(false);
                         }
@@ -70,14 +75,16 @@ namespace id_validator_api.Properties
 
 
                 // get a date from ID and check if birthday is a valid date
-                //msg = "Sünni kuupäev ja aasta ei vasta formaadile";
                 string birthDate = id.Substring(5, 2) + "." +
                     id.Substring(3, 2) + "." +
                     Convert.ToString(year + Convert.ToInt32(id.Substring(1, 2)));
                 //error if parse fails
-                DateTime d = DateTime.Parse(birthDate);
+                msg = id + " || Kuu, kuupäev, aasta ei vasta formaadile ||  aeg: " + DateTime.Now;
+                DateTime date = DateTime.Parse(birthDate);
 
-                Console.WriteLine(d);
+
+
+                Console.WriteLine(date);
                 // calculate the controlsum
                 int controlSum= Int16.Parse(id[0].ToString()) * 1
                       + Int16.Parse(id[1].ToString()) * 2
@@ -121,7 +128,6 @@ namespace id_validator_api.Properties
                 }
 
                 //save result into file
-                using StreamWriter file = new("log.txt", append: true);
                 file.WriteLineAsync(msg);
 
                 //return true value
@@ -131,6 +137,10 @@ namespace id_validator_api.Properties
 
             catch 
             {
+
+                //save false result into file
+                file.WriteLineAsync(msg);
+
                 //return falce value
                 return BadRequest(false);
             }
