@@ -1,0 +1,30 @@
+37709296019 || on valideeritud ||  aeg: 11.04.2022 17:45:23
+37709296019 || on valideeritud ||  aeg: 11.04.2022 17:46:16
+37709296019 || on valideeritud ||  aeg: 11.04.2022 17:52:43
+37709296019 || on valideeritud ||  aeg: 11.04.2022 17:53:07
+37709296019 || on valideeritud ||  aeg: 11.04.2022 18:00:28
+37709296019 || on valideeritud ||  aeg: 11.04.2022 18:01:45
+37709296019 || on valideeritud ||  aeg: 11.04.2022 18:01:45
+37709296019 || on valideeritud ||  aeg: 11.04.2022 18:35:14
+37709296019 || on valideeritud ||  aeg: 11.04.2022 18:40:34
+37709296019 || on valideeritud ||  aeg: 11.04.2022 19:26:35
+37709296019 || on valideeritud ||  aeg: 11.04.2022 19:30:24
+37709296019 || on valideeritud ||  aeg: 11.04.2022 19:43:48
+37709296019 || on valideeritud ||  aeg: 11.04.2022 19:45:12
+37709296019 || on valideeritud ||  aeg: 11.04.2022 20:05:50
+37709296019 || on valideeritud ||  aeg: 11.04.2022 20:08:48
+37709296019 || on valideeritud ||  aeg: 11.04.2022 20:10:02
+37709290000 || kontrollsumma ei klapi ||  aeg: 11.04.2022 20:14:06
+37709296019 || on valideeritud ||  aeg: 11.04.2022 20:14:06
+37709290000 || kontrollsumma ei klapi ||  aeg: 11.04.2022 20:36:37
+37709296019 || on valideeritud ||  aeg: 11.04.2022 20:36:37
+37709290000 || kontrollsumma ei klapi ||  aeg: 11.04.2022 20:46:02
+37709296019 || on valideeritud ||  aeg: 11.04.2022 20:46:02
+37709290000 || kontrollsumma ei klapi ||  aeg: 11.04.2022 21:25:46
+37709296019 || on valideeritud ||  aeg: 11.04.2022 21:25:46
+37709290000 || kontrollsumma ei klapi ||  aeg: 11.04.2022 21:37:21
+37709296019 || on valideeritud ||  aeg: 11.04.2022 21:37:21
+37709296019 || on valideeritud ||  aeg: 11.04.2022 21:38:46
+37709296019 || on valideeritud ||  aeg: 11.04.2022 21:56:05
+37709290000 || kontrollsumma ei klapi ||  aeg: 11.04.2022 21:56:24
+37709296019 || on valideeritud ||  aeg: 11.04.2022 21:56:24

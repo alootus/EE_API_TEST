@@ -24,8 +24,8 @@ const Header = ({ show, style, message, handleSubmit, setShow, setInput }) => {
           <p className="pt-2">{message}</p>
         </Alert>
 
-        <Form className="mt-3" onSubmit={handleSubmit}>
-          <InputGroup className="mb-3">
+        <Form className="mt-3 " onSubmit={handleSubmit}>
+          <InputGroup className=" mb-3 ">
             <FormControl
               placeholder="Sisesta isikukood"
               name="id"

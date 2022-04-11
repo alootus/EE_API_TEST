@@ -67,9 +67,8 @@ namespace id_validator_api.Properties
                         {
                             //save false result into file
                             msg = id + " || soo tunnus on vale ||  aeg: " + DateTime.Now;
-                            file.WriteLineAsync(msg);
                             //return falce value
-                            return BadRequest(false);
+                            throw new ArgumentException(msg);
                         }
                 }
 
@@ -135,12 +134,11 @@ namespace id_validator_api.Properties
 
             }
 
-            catch 
+            catch
             {
 
                 //save false result into file
                 file.WriteLineAsync(msg);
-
                 //return falce value
                 return BadRequest(false);
             }
