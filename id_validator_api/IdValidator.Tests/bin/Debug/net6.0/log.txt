@@ -28,3 +28,39 @@
 37709296019 || on valideeritud ||  aeg: 11.04.2022 21:56:05
 37709290000 || kontrollsumma ei klapi ||  aeg: 11.04.2022 21:56:24
 37709296019 || on valideeritud ||  aeg: 11.04.2022 21:56:24
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 19:45:47
+37709296019 || on valideeritud ||  aeg: 13.04.2022 19:45:47
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 19:46:31
+37709296019 || on valideeritud ||  aeg: 13.04.2022 19:46:31
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 19:51:39
+37709296019 || on valideeritud ||  aeg: 13.04.2022 19:51:39
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 19:52:11
+37709296019 || on valideeritud ||  aeg: 13.04.2022 19:52:11
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 19:52:48
+37709296019 || on valideeritud ||  aeg: 13.04.2022 19:52:48
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 19:53:34
+37709296019 || on valideeritud ||  aeg: 13.04.2022 19:53:34
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 19:55:45
+37709296019 || on valideeritud ||  aeg: 13.04.2022 19:55:45
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 19:56:13
+37709296019 || on valideeritud ||  aeg: 13.04.2022 19:56:13
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 20:00:15
+37709296019 || on valideeritud ||  aeg: 13.04.2022 20:00:15
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 20:02:40
+37709296019 || on valideeritud ||  aeg: 13.04.2022 20:02:40
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 20:03:08
+37709296019 || on valideeritud ||  aeg: 13.04.2022 20:03:08
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 20:04:52
+37709296019 || on valideeritud ||  aeg: 13.04.2022 20:04:52
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 20:16:10
+37709296019 || on valideeritud ||  aeg: 13.04.2022 20:16:10
+37709296019 || on valideeritud ||  aeg: 13.04.2022 20:16:10
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 20:18:06
+37709296000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 20:18:06
+37709296019 || on valideeritud ||  aeg: 13.04.2022 20:18:06
+37709290015 || on valideeritud ||  aeg: 13.04.2022 20:18:56
+37709296000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 20:18:56
+37709296019 || on valideeritud ||  aeg: 13.04.2022 20:18:56
+37709290000 || kontrollsumma ei klapi ||  aeg: 13.04.2022 20:20:05
+37709290015 || on valideeritud ||  aeg: 13.04.2022 20:20:05
+37709296019 || on valideeritud ||  aeg: 13.04.2022 20:20:05

@@ -139,6 +139,7 @@ namespace id_validator_api.Properties
 
                 //save false result into file
                 file.WriteLineAsync(msg);
+
                 //return falce value
                 return BadRequest(false);
             }
