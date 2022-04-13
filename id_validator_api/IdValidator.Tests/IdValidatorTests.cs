@@ -13,7 +13,7 @@ namespace IdValidator.Tests
         public void ValidateId_Should_Return_Status_OK()
         {
             //Arrange
-            string id = "37709296019";
+            string id = "37709290015";
             var controller = new IdValidatorController();
             //Act
             var actionResult = controller.ValidateId(id);
@@ -60,9 +60,11 @@ namespace IdValidator.Tests
         [Fact]
         public void Get_LogList_Is_Not_Empty()
         {
+            //Arrange
             var controller = new IdValidatorController();
-
+            //Act
             var result = controller.GetList();
+            //Assert
             Assert.NotNull(result);
         }
 
